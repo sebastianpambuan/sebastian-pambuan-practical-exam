@@ -5,11 +5,11 @@
     --accent-secondary: #5c3998;
 
     --bg-primary: #f5faf6;
-    --bg-secondary: #eaf3ec;
+    --bg-secondary: #c5d8ca;
     --bg-card: #ffffff;
 
     --text-primary: #183b29;
-    --text-secondary: #526b5b;
+    --text-secondary: #305843;
     --text-muted: #829489;
 
     --border: #d5e4d9;
@@ -39,11 +39,6 @@ body {
     line-height: 1.7;
     color: var(--text-primary);
     background: var(--bg-primary);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 a {
@@ -205,6 +200,9 @@ h2 span,
     font-weight: bold;
     box-shadow: var(--shadow);
     transition: 0.3s ease;
+    h1 {
+        font-size: 1rem;
+    }
 }
 
 .skill-card:hover {
@@ -215,10 +213,6 @@ h2 span,
     .skill-label {
         border-color: var(--secondary);
     }
-}
-
-.skill-card h1 {
-    font-size: 1rem;
 }
 
 .skill-category {
@@ -234,7 +228,6 @@ h2 span,
     border: 1px solid var(--text-primary);
     width: fit-content;
     padding: 2px 6px;
-    border-radius: 4px;
 }
 
 #contact {
@@ -251,34 +244,30 @@ h2 span,
     margin-bottom: 30px;
 }
 
-.contact ul {
-    list-style: none;
-    border-top: 1px solid var(--border);
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
 }
 
-.contact li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 18px 5px;
-    border-bottom: 1px solid var(--border);
-}
-
-.contact li span {
-    color: var(--accent);
+.contact-card {
+    padding: 16px;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    color: var(--text-primary);
     font-weight: bold;
-}
-
-.contact li a {
-    color: var(--text-secondary);
-    text-decoration: none;
+    box-shadow: var(--shadow);
     transition: 0.3s ease;
+    h1 {
+        font-size: 1rem;
+    }
 }
 
-.contact li a:hover {
-    color: var(--accent-secondary);
+.contact-card:hover {
+    border-color: var(--secondary);
+    transform: translateY(-5px);
+    box-shadow: var(--glow);
+    color: var(--secondary);
 }
 
 footer {
@@ -287,7 +276,7 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 25px 0;
+    padding: 25px;
     border-top: 1px solid var(--border);
     color: var(--text-muted);
     font-size: 0.8rem;
@@ -298,8 +287,8 @@ footer span {
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 0 25px;
+    .about, .skills, .contact {
+        padding: 20px;
     }
 
     section {
@@ -332,9 +321,8 @@ footer span {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .contact li {
-        align-items: flex-start;
-        flex-direction: column;
+    .contact-grid {
+        grid-template-columns: repeat(1, 1fr);
     }
 
     footer {
